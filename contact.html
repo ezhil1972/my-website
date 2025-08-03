@@ -6,15 +6,10 @@
   <title>Contact Us</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f2f2;
     }
 
     nav {
@@ -43,92 +38,68 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
     }
 
-    nav a:hover {
-      color: #ffe6ff;
-      text-shadow: 0 0 6px white;
-    }
-
-    .contact-section {
+    .contact-container {
       display: flex;
       flex-wrap: wrap;
-      margin: 0 auto;
-      width: 100%;
-      min-height: 90vh;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      min-height: 100vh;
     }
 
-    .image-container {
+    .contact-img {
       flex: 1;
       min-width: 300px;
+      height: 100vh;
       overflow: hidden;
     }
 
-    .image-container img {
+    .contact-img.left img,
+    .contact-img.right img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease;
     }
 
-    .image-container img:hover {
-      transform: scale(1.05);
-    }
-
-    .form-container {
-      flex: 1.2;
-      min-width: 320px;
+    .contact-form {
+      flex: 2;
       padding: 3rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background-color: #fdfbfd;
+      background-color: white;
     }
 
-    .form-container h2 {
-      margin-bottom: 1.5rem;
+    .contact-form h2 {
       color: #6a0dad;
       font-size: 2rem;
+      margin-bottom: 1rem;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-
-    input, textarea {
-      padding: 0.9rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
+    .contact-form input,
+    .contact-form textarea {
       width: 100%;
-      background-color: #fff;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
     }
 
-    textarea {
-      resize: vertical;
-    }
-
-    button {
-      padding: 0.9rem;
+    .contact-form button {
       background-color: #6a0dad;
       color: white;
-      font-size: 1rem;
-      font-weight: bold;
+      padding: 0.8rem 1.5rem;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
+      font-size: 1rem;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-    button:hover {
-      background-color: #5900b3;
-      transform: scale(1.05);
+    .contact-form button:hover {
+      background-color: #5500aa;
+    }
+
+    #msg {
+      color: green;
+      margin-top: 1rem;
+      font-weight: bold;
     }
 
     footer {
@@ -140,16 +111,12 @@
     }
 
     @media screen and (max-width: 768px) {
-      .contact-section {
+      .contact-container {
         flex-direction: column;
       }
 
-      .form-container {
-        padding: 2rem;
-      }
-
-      .form-container h2 {
-        text-align: center;
+      .contact-img {
+        height: 300px;
       }
     }
   </style>
@@ -165,33 +132,72 @@
     </ul>
   </nav>
 
-  <section class="contact-section">
-    <!-- Left Image -->
-    <div class="image-container">
-      <img src="left-img.jpg" alt="Left Image">
+  <div class="contact-container">
+    <div class="contact-img left">
+      <img src="left-img.jpg" alt="Left Image" />
     </div>
 
-    <!-- Form -->
-    <div class="form-container">
-      <h2>Get in Touch</h2>
-      <form action="#">
+    <div class="contact-form">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
         <input type="text" name="name" placeholder="Your Full Name" required>
         <input type="email" name="email" placeholder="Your Email Address" required>
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
+        <p id="msg"></p>
       </form>
     </div>
 
-    <!-- Right Image -->
-    <div class="image-container">
-      <img src="right-img.jpg" alt="Right Image">
+    <div class="contact-img right">
+      <img src="right-img.jpg" alt="Right Image" />
     </div>
-  </section>
+  </div>
 
   <footer>
-    &copy; 2025 Team. All rights reserved.
+    &copy; 2025 OUR EDUCATIONAL SITE. All rights reserved.
   </footer>
 
-</body>
+  <!-- Firebase CDN -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 
+  <script>
+    // 🔐 Replace with your Firebase config
+    const firebaseConfig = {
+  apiKey: "AIzaSyD_uUqfJ6sj9gVVCeie03kP0X4iCTEvV2M",
+  authDomain: "contact-form-site-c73cb.firebaseapp.com",
+  databaseURL: "https://contact-form-site-c73cb-default-rtdb.firebaseio.com",
+  projectId: "contact-form-site-c73cb",
+  storageBucket: "contact-form-site-c73cb.firebasestorage.app",
+  messagingSenderId: "16576497235",
+  appId: "1:16576497235:web:513308746ede95db51e8a6"
+};
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const contactFormDB = firebase.database().ref("contactForm");
+
+    // Listen for form submit
+    document.getElementById("contactForm").addEventListener("submit", submitForm);
+
+    function submitForm(e) {
+      e.preventDefault();
+
+      const name = document.querySelector("input[name='name']").value;
+      const email = document.querySelector("input[name='email']").value;
+      const message = document.querySelector("textarea[name='message']").value;
+
+      contactFormDB.push({
+        name: name,
+        email: email,
+        message: message
+      });
+
+      document.getElementById("msg").innerText = "✅ Message sent successfully!";
+      setTimeout(() => document.getElementById("msg").innerText = "", 4000);
+
+      document.getElementById("contactForm").reset();
+    }
+  </script>
+
+</body>
 </html>
