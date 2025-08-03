@@ -2,14 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>About - Hari's Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About OUR SITE</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: #f0f0f0;
-      color: #333;
+      padding: 0;
+      background-color: #f5f5f5;
     }
+
     nav {
       background-color: #6a0dad;
       padding: 1rem 2rem;
@@ -18,48 +21,85 @@
       align-items: center;
       color: white;
     }
-    nav h1 { margin: 0; font-size: 1.5rem; }
-    nav ul { list-style: none; display: flex; gap: 1rem; padding: 0; margin: 0; }
-    nav a { color: white; text-decoration: none; font-weight: bold; }
 
-    section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ccc;
-      margin-top: 2rem;
+    nav h1 {
+      margin: 0;
+      font-size: 1.5rem;
     }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem;
+      gap: 2rem;
+      background-color: white;
+    }
+
+    .about-text {
+      max-width: 500px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .about-image img {
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
     footer {
       background-color: #222;
       color: white;
       text-align: center;
       padding: 1rem;
-      margin-top: 2rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-<nav>
-  <h1>Hari's Site</h1>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <nav>
+    <h1>OUR EDUCATIONAL SITE</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<section>
-  <h2>About Me</h2>
-  <p>Hi! I'm Hari. I'm currently a college student passionate about web development, technology, and creative learning. I love exploring new things and building digital projects that solve real-world problems.</p>
-  <p>This website is my space to grow, learn, and share. Thanks for visiting 💜</p>
-</section>
+  <section class="about-section">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        Hello!, We are a passionate learner and aspiring web developer. We enjoy creating simple and beautiful websites, exploring new technologies, and expressing creativity through design and code.
+        <br><br>
+        Apart from coding, we love music, drawing, and sharing what we learn with others. We are always curious to grow and build something meaningful!
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="hari-about.jpg" alt="Hari Image">
+    </div>
+  </section>
 
-<footer>
-  &copy; 2025 Hari. All rights reserved.
-</footer>
+  <footer>
+    &copy; 2025 Team. All rights reserved.
+  </footer>
 
 </body>
 </html>
