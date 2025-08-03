@@ -1,24 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>About Me</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>About - Hari's Website</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f0f0f0;
+      color: #333;
+    }
+    nav {
+      background-color: #6a0dad;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+    nav h1 { margin: 0; font-size: 1.5rem; }
+    nav ul { list-style: none; display: flex; gap: 1rem; padding: 0; margin: 0; }
+    nav a { color: white; text-decoration: none; font-weight: bold; }
+
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      margin-top: 2rem;
+    }
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>About Me</h1>
-    <nav>
-      <a href="index.html">Home</a> |
-      <a href="about.html">About</a> |
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <p>Hello! I'm Hari, and this is my first website created with HTML. 💻</p>
-  </main>
-  <footer>
-    <p>© 2025 Hari's Website</p>
-  </footer>
+
+<nav>
+  <h1>Hari's Site</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section>
+  <h2>About Me</h2>
+  <p>Hi! I'm Hari. I'm currently a college student passionate about web development, technology, and creative learning. I love exploring new things and building digital projects that solve real-world problems.</p>
+  <p>This website is my space to grow, learn, and share. Thanks for visiting 💜</p>
+</section>
+
+<footer>
+  &copy; 2025 Hari. All rights reserved.
+</footer>
+
 </body>
 </html>
