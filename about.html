@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About OUR SITE</title>
+  <title>About Us</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
+      background-color: #f4f4f4;
     }
 
     nav {
@@ -39,6 +43,12 @@
       color: white;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffe6ff;
+      text-shadow: 0 0 6px white;
     }
 
     .about-section {
@@ -46,21 +56,90 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      padding: 3rem;
+      padding: 4rem 2rem;
+      background-color: #ffffff;
       gap: 2rem;
-      background-color: white;
     }
 
     .about-text {
-      max-width: 500px;
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
       font-size: 1.1rem;
-      line-height: 1.6;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .about-text h2 {
+      color: #6a0dad;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
     }
 
     .about-image img {
-      width: 320px;
+      width: 100%;
+      max-width: 350px;
       border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .about-image img:hover {
+      transform: scale(1.05);
+    }
+
+    .vision-section {
+      background-color: #fff;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .vision-section h2 {
+      color: #6a0dad;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .vision-section p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .skills-section {
+      background-color: #f8f8ff;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .skills-section h2 {
+      color: #6a0dad;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .skills-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .skills-icons img {
+      width: 60px;
+      height: 60px;
+      transition: transform 0.3s ease;
+    }
+
+    .skills-icons img:hover {
+      transform: scale(1.1);
     }
 
     footer {
@@ -70,6 +149,17 @@
       padding: 1rem;
       font-size: 0.9rem;
       margin-top: 2rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .about-section {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      .about-text {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -84,26 +174,46 @@
     </ul>
   </nav>
 
+  <!-- About Section -->
   <section class="about-section">
     <div class="about-text">
       <h2>About Us</h2>
       <p>
-        Hello! We are passionate learners and aspiring web developers, committed to creating user-friendly and beautiful websites. We believe in using technology as a tool to express creativity and solve real-world problems.
+        Welcome to our educational platform! We are a team of learners and creators committed to designing clean, engaging, and meaningful digital experiences.
       </p>
       <p>
-        Our journey started with curiosity and a desire to make the web more accessible and exciting for everyone. Along the way, we've explored HTML, CSS, JavaScript, and other technologies that helped shape our understanding of modern web development.
+        Our mission is to simplify learning and make web development accessible to all. With a strong passion for HTML, CSS, and interactive design, we believe in crafting websites that are not just functional but also beautiful.
       </p>
       <p>
-        Besides coding, we love music, reading, and helping others learn. We are always open to feedback and collaboration, as it helps us grow and improve together. Let's build something amazing!
+        Beyond the screen, we enjoy drawing, listening to music, and exploring creative ideas. Whether it's coding or art, we pour our heart into everything we do.
       </p>
     </div>
     <div class="about-image">
-      <img src="hari-about.jpg" alt="About Us Image">
+      <img src="hari-about.jpg" alt="About Us">
     </div>
   </section>
 
+  <!-- Vision Section -->
+  <section class="vision-section">
+    <h2>🌟 Our Vision</h2>
+    <p>
+      We believe education should be creative, accessible, and inspiring. Our goal is to empower students and creators to turn their ideas into digital realities, one line of code at a time.
+    </p>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills-section">
+    <h2>💻 Technologies We Use</h2>
+    <div class="skills-icons">
+      <img src="html-icon.png" alt="HTML Icon" title="HTML">
+      <img src="css-icon.png" alt="CSS Icon" title="CSS">
+      <img src="js-icon.png" alt="JavaScript Icon" title="JavaScript">
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    &copy; 2025 OUR EDUCATIONAL SITE. All rights reserved.
+    &copy; 2025 Team. All rights reserved.
   </footer>
 
 </body>
