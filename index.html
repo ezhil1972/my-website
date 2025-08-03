@@ -51,12 +51,44 @@
       padding: 2rem;
       text-align: center;
     }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding: 2rem;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+      overflow: hidden;
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 1rem;
+    }
+    .card-content h3 {
+      margin-top: 0;
+    }
     footer {
       background-color: #222;
       color: white;
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -78,6 +110,31 @@
   <section>
     <h2>Hello, I'm Hari!</h2>
     <p>This is my personal website where I share my projects, learning journey, and more.</p>
+  </section>
+
+  <!-- 🎨 Image with Descriptions Section -->
+  <section class="gallery">
+    <div class="card">
+      <img src="img1.jpg" alt="Learning">
+      <div class="card-content">
+        <h3>Learning</h3>
+        <p>I love exploring new tech, coding, and building creative websites.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img2.jpg" alt="Projects">
+      <div class="card-content">
+        <h3>Projects</h3>
+        <p>Hands-on projects help me improve my skills and build confidence.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="img3.jpg" alt="Hobbies">
+      <div class="card-content">
+        <h3>Hobbies</h3>
+        <p>I enjoy drawing, reading, and listening to music in my free time.</p>
+      </div>
+    </div>
   </section>
 
   <footer>
